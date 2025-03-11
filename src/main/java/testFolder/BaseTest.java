@@ -12,7 +12,7 @@ public class BaseTest {
     @BeforeClass
     public void setup() {
         driver = new ChromeDriver();
-        driver.get(TestData.PAGE_URL);
+        driver.get(TestData.Page_Url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
     }

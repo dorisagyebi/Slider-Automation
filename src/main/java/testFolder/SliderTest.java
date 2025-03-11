@@ -10,11 +10,18 @@ public class SliderTest extends BaseTest {
     @BeforeClass
     public void setupTest() {
         sliderPage = new SliderPage(driver);
+        sliderPage.switchToFrame();
     }
 
     @Test
-    void testPageTitle() {
+    public void testPageTitle() {
         String actualTitle = sliderPage.getPageTitle();
-        Assert.assertEquals(actualTitle, TestData.EXPECTED_TITLE, "Page title does not match");
+        Assert.assertEquals(actualTitle, TestData.Expected_Title, "Page title does not match");
+    }
+
+    @Test
+    public void testDragAndDrop() {
+        sliderPage.dragSlider(100);
+        System.out.println("Slider moved successfully!");
     }
 }
